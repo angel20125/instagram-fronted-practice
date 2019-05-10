@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.post-list {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat( 3,minmax(100px,293px)  );
+    grid-gap: 28px;
+}
+.post {
+    cursor:pointer;/*cambia el tipo de puntero del mouse*/
+    /*position: relative
+        post recibe el valor-propiedad  
+        position:relative para que  el
+        post-overlay se active con el 
+        evento del mouse tenga la mis-
+        ma dimensiones que post.  
+    */
+    position: relative;
+    display: block;
+}
+.post-image{
+    margin:0;/*se quita el margen para que no afecte al gap*/
+}
+.post-image img {
+    width: 100%;/*abarca del 100%*/
+    vertical-align: top;
+}
+
+.post-overlay{
+    background:rgba(0,0,0,.4);/*Negro transparente*/
+    
+    /*position:absolute
+        Con esta propiedad le decimos 
+        que tome todo el espacio dis-
+        ponible del padre o elemento
+        más cercano que tenga la si-
+        guiente propiedad valor posi-
+        tion:relative.
+    */
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    /* display:none
+        post-overlay tiene el si-
+        guiente valor-propiedad para
+        que sólo aparezca cuando  el 
+        evento del mouse de tipo hover
+        lo active.
+        la propiedad que los activa es 
+        
+        find
+        .post:hover .post-overlay {}
+    */ 
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.post:hover .post-overlay { 
+    /*
+        .post:hover .post-overlay
+        Esta declaracion css permite hacer
+        activar el evento del mouse 
+    */
+    
+    /* display:flex;
+        muestras los comentarios 
+        (comments) y los me gustas
+        (likes). pero de modo flexibles
+        permitiendo que los elementos 
+        se organizen en si.
+    */
+    display:flex;
+    
+}
+.post-likes,
+.post-comments{
+    width: 80px;
+    margin: 5px;
+    font-weight: bold;/*estilo a la fuente*/
+    text-align: center;/*centra los likes y comment*/ 
+
+    display: inline-block; /* display: inline-block;
+        organiza un elemento 
+        al costado del otro
+    */ 
+}
+
+
+/*///////////
+RESPONSIVE 
+RULES
+////////////*/
+@media screen and (max-width: 768px){
+  .post-list{
+      grid-gap: 3px;
+  }   
+}
