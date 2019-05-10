@@ -1,2 +1,2 @@
 # instagram-fronted-practice
- practice html and css. modeling a section of the Pinterest front-end
+ practice html and css. modeling a section of the instagram front-end
